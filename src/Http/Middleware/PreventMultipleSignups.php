@@ -15,14 +15,14 @@ class PreventMultipleSignups
      * @param $subject
      * @return mixed
      */
-    public function handle( $request, Closure $next, $subject )
+    public function handle( $request, Closure $next )
     {
         if ( auth()->user() )
         {
             return $next( $request );
         }
 
-        if ( !MultiSignup::canSignUp( $request ) )
+        if ( !\MultiSignup::canSignUp( $request ) )
         {
             return abort( 403, 'A new account cannot be created. For assistance please contact support.' );
         }
