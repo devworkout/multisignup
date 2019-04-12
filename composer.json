@@ -1,0 +1,53 @@
+{
+  "name": "devworkout/multisignup",
+  "description": "",
+  "keywords": [
+    "devworkout",
+    "multisignup"
+  ],
+  "homepage": "https://github.com/devworkout/multisignup",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladislav Novik",
+      "email": "librevlad@gmail.com",
+      "homepage": "https://serpentine.io",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "devworkout/laravel-user-ips": "dev-master"
+  },
+  "require-dev": {
+    "larapack/dd": "^1.0",
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DevWorkout\\MultiSignup\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DevWorkout\\MultiSignup\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DevWorkout\\MultiSignup\\MultiSignupServiceProvider"
+      ],
+      "aliases": {
+        "MultiSignup": "DevWorkout\\MultiSignup\\MultiSignupFacade"
+      }
+    }
+  }
+}
