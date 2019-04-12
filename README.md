@@ -10,7 +10,10 @@ You can install the package via composer:
 composer require devworkout/multisignup
 ```
 
-## Usage
+Migrate the database:
+```bash
+php artisan migrate
+```
 
 Publish config:
 ```bash
@@ -25,6 +28,9 @@ return [
 ];
 
 ```
+
+
+## Usage
 
 ### Using Facade
 
