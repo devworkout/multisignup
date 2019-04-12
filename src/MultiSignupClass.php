@@ -17,7 +17,7 @@ class MultiSignupClass
     public function canSignUp( $request = null )
     {
         $request = $request ?? request();
-        return !$this->ipReachedMaxSignups( $request ) && !$this->hasNosignupCookie( $request->ip() );
+        return !$this->ipReachedMaxSignups( $request->ip ) && !$this->hasNosignupCookie( $request );
     }
 
     public function hasNosignupCookie( $request = null )
